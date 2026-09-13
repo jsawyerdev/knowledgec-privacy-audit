@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# never accidentally commit a real copy of anyone's activity database
+*.db
+*.db-wal
+*.db-shm
