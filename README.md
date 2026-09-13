@@ -102,34 +102,43 @@ python3 knowledgec_audit.py --db-path /path/to/copy.db report   # test against a
 `report` never writes to the database (opens it `mode=ro`). `purge` opens it read-write and
 asks for a `y` confirmation before deleting anything unless you pass `--yes`.
 
-### Example output shape
+### Example findings
 
-Numbers below are illustrative, not real data from any machine:
+Every value below is fabricated by [assets/generate_example_report.py](assets/generate_example_report.py)
+-- none of it is pulled from a real machine. This is the shape and scale of
+what `report` actually surfaces, not a hypothetical:
+
+![Example findings: fabricated screen-time, daily-rhythm, and Bluetooth stats demonstrating what the report command surfaces](assets/example_report.png)
+
+<details>
+<summary>Raw terminal output shape</summary>
 
 ```
-Retention: 23 day(s) of app-usage history on disk right now
-  2026-08-12 .. 2026-09-13
-  10,426 rows present / 217,561 ever recorded (macOS deletes the rest on its
+Retention: 19 day(s) of app-usage history on disk right now
+  2026-01-04 .. 2026-01-23
+  8,214 rows present / 164,902 ever recorded (macOS deletes the rest on its
   own rolling schedule -- you were never asked)
 
 Top 5 applications by tracked time:
 bundle id              time     sessions
 ---------------------  -------  --------
-com.google.Chrome      118h54m  3703
-com.microsoft.VSCode   55h25m   3344
+com.google.Chrome      94h36m   2910
+com.microsoft.VSCode   41h12m   2588
 ...
 
 Bluetooth devices this Mac has connected to:
 device               connect events  first seen  last seen
 -------------------  --------------  ----------  ----------
-<car head unit>       223            2026-08-14  2026-09-12
+<car head unit>       190            2026-01-05  2026-01-22
 
 This data has synced with 2 other Apple device(s) via iCloud/Continuity:
 device id                              model        last seen
 --------------------------------------  -----------  ----------
-DD096144-...                            iPhone14,4   2026-08-20
-A7BC5F08-...                            iPad5,1      2026-08-20
+7F2A9C01-...                            iPhone14,4   2026-01-15
+B3E8D420-...                            iPad5,1      2026-01-15
 ```
+
+</details>
 
 ## Important limitations
 
