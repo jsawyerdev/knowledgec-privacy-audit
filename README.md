@@ -14,6 +14,11 @@ even you open without an extra permission grant, and a copy already syncs to you
 Apple devices over iCloud. This is a single, dependency-free Python script that shows you
 exactly what's in it, on your own machine, and lets you clear it.
 
+This file turned out to be the smaller half of the story. Digging further led to
+[biome-privacy-audit](https://github.com/jsawyerdev/biome-privacy-audit) -- Apple's newer,
+much larger tracking store with an on-device identity graph of the people you know and a
+sync layer built on actual CloudKit.
+
 ```bash
 git clone https://github.com/jsawyerdev/knowledgec-privacy-audit
 cd knowledgec-privacy-audit
